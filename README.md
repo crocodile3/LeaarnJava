@@ -119,3 +119,137 @@ class var{
 ```
 静态变量的有效范围可以跨类，甚至可以达到整个运用程序之类；其他类可以通过‘类名.静态变量’的方式在其他类内使用；
 局部变量-在累的方法中定义的变量，局部变量只在当前的代码块中有效；
+### 1.4 运算符
+1.4.1赋值运算符：‘=’
+```java
+int a=10;      //声明int类型变量a
+int b =5;      //声明int型变量b
+int c = a+b;    // 将变量a与变量b运算后的结果赋值给c
+```
+1.4.2 算术运算符
+除：/
+取余：%
+```java
+public class Arith {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		float number1 = 45.56f;
+		int number2 = 152;
+		System.out.println("和为："+number1+number2);
+		System.out.println("差为："+(number2-number1));
+		System.out.println("积为："+number1*number2);
+		System.out.println("商为："+number1/number2);
+	}
+
+}
+```
+1.4.3自增自减运算符
+```java
+++a(-a)      //表示在使用变量a之前，先使a的值增加（减）1
+a++(a+)      //表示在使用 变量a之后,使a的值增加（减）1
+b=++a ;       //表示先将a的值加1，然后赋值给b，此时a的值为5，b的值为5（假设a=4）
+b=a++;        //表示先将a的值赋给b，再将a的值变为5，此时a的值为5，b的值为4；
+```
+1.4.4 比较运算符
+```java
+public class Compare {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int number1 = 4;
+		int number2 = 5;
+		System.out.println("number1>number2的返回值为："+(number1>number2));
+		System.out.println("number1==number2的返回值为："+(number1==number2));
+		System.out.println("number1!=number2的返回值为："+(number1!=number2));
+		System.out.println("number1>=number2的返回值为："+(number1>=number2));
+		System.out.println("number1<=number2的返回值为："+(number1<=number2));
+
+	}
+
+}
+```
+1.4.5 逻辑运算符
+逻辑运算符：与：&（&&），或：||，非:!
+##注##：&与&&的区别-&&当判断第一个表达式为false时就不会往下判断，可以节省计算判断的次数 ；
+```java
+public class Caculation {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int a = 2 ;
+		int b = 5;
+		boolean result1 = ((a>b))&&(a!=b);
+		boolean result2 = ((a>b)||(a!=b));
+		System.out.println(result1);
+		System.out.println(result2);
+
+	}
+
+}
+```
+
+1.4.6 位运算符
+<1>“按位与”运算-&
+运算法则：如果两个整型的数据a，b对应的位都是1，则解雇位才是1，否则为0；
+<2>“按位或”运算-|
+运算法则：如果两个操作数对应的位都是0,则结果为才是0，否则为1；
+<3>”按位取反(按位非)“运算-~
+运算法则：将操作数二进制中的1改为0,0改为1；
+<4>“按位异或”-^
+运算法则：当两个操作数的二进制表示相同（同为0,或同为1）时，结果才为0，否则为1；
+<5>移位操作
+<<:左移
+>>:右移
+>>>:无符号移动
+移位运算支持的数据类型：byte,short,char,int,log;
+
+### 1.5数据类型转换
+1.5.1 隐式转换：从低级类型向高级类型的转换，系统自动执行，无需人为操作
+类型按精度由低到高的排序为：byte<short<int<long<float<double
+```java
+public class Cover {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		byte mybyte = 127;
+		int myint = 150;
+		float myfloat = 452.12f;
+		char mychar = 10;
+		double mydouble = 4.46546;
+		System.out.println("byte型与float型数据进行运算的结果为："+(mybyte+myfloat));
+		System.out.println("byte型与int型数据进行运算的结果为："+(mybyte*myint));
+		System.out.println("byte型与char型数据进行运算的结果为："+(mybyte/mychar));
+		System.out.println("char型与double型数据进行运算的结果为："+(mydouble*mychar));
+	}
+```
+1.5.2 显式类型转换
+显示转换（强制转换）：高精度转换为低精度
+```java
+int a =(int)45.23;       //此时输出a的值为45
+long y = (long)456.6f    //此时输出y的值456d
+int b =(int)''             //此时输出b的值为100
+```
+
+### 1.6代码的注释与编码规范
+1.6.1 注释
+<1>单行注释-"//"
+<2>多行注释-"/**/":多行注释可以嵌套单行注释，但是多行注释不能嵌套多行注释
+```java
+/*
+注释1
+注释2
+......
+注释n
+*/
+<3>文档注释
+"/**文档注释内容*/"
+
+1.6.2 编码规范
+- 每条语句独占一行，一条命令要以分号结束；
+- 在声明变脸过的时候，尽量使每个变量的声明独占一行；
+- 关键字与关键字之间如果有多个空格的话，这些空格均被视为一个；
+
+
+
+
