@@ -244,12 +244,180 @@ int b =(int)''             //此时输出b的值为100
 */
 <3>文档注释
 "/**文档注释内容*/"
-
+``` 
 1.6.2 编码规范
 - 每条语句独占一行，一条命令要以分号结束；
 - 在声明变脸过的时候，尽量使每个变量的声明独占一行；
 - 关键字与关键字之间如果有多个空格的话，这些空格均被视为一个；
 
+### 1.7流程控制
+1.7.1复合语句
+复合语句以开括号"{"开始，闭括号"}"结束；
+```java
+public class Compound {
 
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int x =20;
+		{
+			int y =40;
+			System.out.println(y);
+			int z = 245;
+			boolean b;
+			{
+				b = y >z;
+				System.out.println(b);
+			}
+		}
+		String word = "hello Java";
+		System.out.println(word);
 
+	}
 
+}
+```
+1.7.2 条件语句
+<1>if条件语句
+语句语法
+```java
+if(布尔表达式){
+    语句序列
+}
+```
+注：当只有一条语句时，可以省略条件语句中的"{}"
+```java
+int a =100;
+    if(a==100)
+    System.out.print("a的值是100")
+```
+```java
+public class Getif {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int x = 45;
+		int y =12;
+		if(x>y){
+			System.out.println("变量x大于变量y");
+		}
+		if(x<y){
+			System.out.println("变量x大于变量y");
+		}
+
+	}
+
+}
+```
+1.7.3 if...else语句
+语法
+```java
+if(表达式){
+     若干语句
+}
+else{
+    若干语句
+}
+```
+```java
+public class Getifelse {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int math = 95;
+		int english =56;
+		if (math>60){
+			System.out.println("数学及格");
+		}else{
+			System.out.println("数学没有及格");
+		}
+		if(english>60){
+			System.out.println("英语及格");
+		}else{
+			System.out.println("英语没有及格");
+		}
+
+	}
+
+}
+
+```
+
+1.7.4 if...else if多分支语句
+语法
+```java
+if（条件表达式1）{
+    语句序列1}
+else if(条件表达式2){
+    语句序列2
+}
+...
+else if(表达式n){
+    语句序列n
+}
+```
+```java
+public class GetTerm {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int x =20;
+		if(x>30){
+			System.out.println("a的值大于30");
+		}
+		else if(x>10){
+			System.out.println("a的值大于10，但小于30");
+		}
+		else if(x>0){
+			System.out.println("a的值大于0，但小于10");
+		}
+		else{
+			System.out.println("a的值小于0");
+		}
+
+	}
+
+}
+```
+
+1.7.5switch多分支语句
+使用if语句来检测变量是否符合某个条件，实现多选一的选择效果
+语法
+```java
+switch(表达式）
+{
+case 常量值1：
+    语句块1
+    [break;]
+......
+case 常量值n:
+    语块句n
+    [break;]
+defaulf;
+    语块句n+1:
+    [break]
+}
+```
+switch语句首先计算表达式的值，如果表达式的值和某个case后面的变量值相同，则执行case语句后的若干个语句直到遇到break语句为止，如果该case语句中没有break语句，将继续执行后面case中的若干个语句，直到遇到break语句为止，若没有一个常量值与表达式的值相同，则执行default后面额语句，default语句为可选语句，如果不存在，且switch语句中表达式值不予任何case的常量值相同，switch不做任何处理。
+```java
+public class GetSwitch {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int week = 2;
+		switch (week){
+			case 1:
+				System.out.println("Monday");
+				break;
+			case 2:
+				System.out.println("Tuesday");
+			case 3:
+				System.out.println("Wednesday");
+				break;
+			default:
+				System.out.println("Sorry,i don't know");
+		}
+
+	}
+
+}
+```
