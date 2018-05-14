@@ -421,3 +421,109 @@ public class GetSwitch {
 
 }
 ```
+
+1.7.5 循环语句
+<1>while循环语句
+语法
+```java
+while(条件表达式)
+{
+    执行语句
+}
+```
+
+```java
+public class GetSum {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int x =1;
+		int sum = 0;
+		while(x<=10){
+			sum = sum + x;
+			x++;
+		}
+		System.out.println("sum = "+sum);
+
+	}
+
+}
+```
+
+<2>do...while循环语句
+特点：先执行一次循环后，再判断条件是否成立;执行语句至少会被执行一次；
+语法
+```java
+do
+{
+    执行语句
+}
+while(条件表达式);
+```
+
+```java
+public class Cycle {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int a = 100;
+		while(a==60)
+		{
+			System.out.println("ok1");
+			a--;
+		}
+		int b = 100;
+		do{
+			System.out.println("ok2");
+			b--;
+		}while(b==60);
+
+	}
+
+}
+```
+
+<3>for 循环语句
+语法
+```java
+for(表达式1；表达式2；表达式3)
+{
+    执行语句
+}
+```
+注：表达式1-初始化的表达式，负责完变量的初始化；
+表达式2-循环条件表达式，值为boolean型的表达式，指定循环条件；
+表达式3-循环后操作表达式，负责修整变量，改变循环条件；
+
+```java
+public class Circulate {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int sum =0;
+		for(int i=2;i<=100;i+=2){
+			sum =sum+i;
+		}
+		System.out.println("2到100之间所有的偶数之和为："+sum);
+
+	}
+
+}
+```
+
+for 实现无线循环的语法
+```java
+for(::)
+{
+    ...
+}
+
+```
+
+<4>foreach语句
+作用：方便遍历数组
+语法
+```java
+for(元素变量x:遍历对象 obj){
+    引用了x的java语句
+```
