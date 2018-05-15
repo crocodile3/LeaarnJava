@@ -527,3 +527,103 @@ for(::)
 for(元素变量x:遍历对象 obj){
     引用了x的java语句
 ```
+
+### 1.8字符串
+1.8.1 String类
+<1> 声明字符串
+语法
+```java
+String str = [null]
+// String：指定该变量为字符串类型
+// str:任意有效的标识符，表示字符串变量的名称
+// null：如果省略null，表示str变量是未初始化的状态，否则表示声明的字符串的值等于null
+
+```
+<2>创建字符串的方法
+```java
+// 1.String(char a[])
+char a[] = {'g','o','o','d',};
+String s = new String(a);
+>>>good
+// 2.String(char a[],int offset,int length)
+char a[]={'s','t','u','d','e','n','t'};
+String s = new String(a,2,4);
+>>>uden
+// 3.String(char[] value)
+char a[] = {'s','t','u','d','e','n','t'}
+String s = new String(a)
+>>>student
+```
+1.8.2连接字符串
+```java
+public class Join {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		String s1 = new String("Hello");
+		String s2 = new String("Java");
+		String s =s1+" "+ s2;
+		System.out.println(s);
+
+	}
+
+}
+
+```
+```java
+public class Link {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int booktime = 4;
+		float practice = 2.5f;
+		System.out.println("我每天花费"+booktime+"小时看书;"+practice+ "小时上机练习");
+
+	}
+
+}
+```
+1.8.3 获取字符串信息
+<1>获取字符串的长度
+str.length()
+```
+String str = "We are students";
+int size = str.length();
+```
+<2>查找字符串
+indexOf()返回的是搜索的是字符或者字符串首次出现的位置；
+lastIndexOf（）返回的是搜索的字符或者字符串最后一次出现的位置
+```
+indexOf(String s)   //字符s首次出现的索引号
+lastIndexOf(substr）   //字符串substr最后出现的位置
+```
+
+```
+public class Text {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		String str = "We are students";
+		int size = str.lastIndexOf("");
+		System.out.println("空字符串在字符串str中的索引位置是："+size);
+		System.out.println("字符串str的长度是："+str.length());
+
+	}
+
+}
+```
+<3>获取指定索引位置的字符
+str.charAt(int index)
+```
+public class Ref {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		String str = "hello word";
+		char mychar = str.charAt(6);
+		System.out.println("字符串str中索引位置为6的字符为："+ mychar);
+
+	}
+
+}
+```
